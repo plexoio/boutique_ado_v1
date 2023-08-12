@@ -34,3 +34,5 @@
 - `mkdir templates/allauth`
 - `ls ../.pip-modules/lib` - determine version
 - `cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/` - recursive copy of allauth templates
+
+## Start First App
