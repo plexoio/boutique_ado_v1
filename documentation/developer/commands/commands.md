@@ -36,3 +36,6 @@
 - `cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/` - recursive copy of allauth templates
 
 ## Start First App
+
+- `python3 manage.py startapp home`
+- `mkdir -p home/templates/home`
