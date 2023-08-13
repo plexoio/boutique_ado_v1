@@ -4,6 +4,9 @@
 
 - `import os` at settings.py
 - `python3 manage.py runserver`
+- `pip3 install 'django<4' gunicorn psycopg2`
+- `pip3 freeze --local > requirements.txt`
+
 ## Project Setup
 
 - `pip3 install 'django<4'` - Django 3.2 is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest Django 4
@@ -12,12 +15,12 @@
     - `*.spqlite3`
     - `*.pyc`
     - `__pycache__/`
-- python3 manage.py makemigrations --dry-run
-- python3 manage.py migrate --plan
-- python3 manage.py migrate
-- python3 manage.py createsuperuser
-- git status
-- git remote -v
+- `python3 manage.py makemigrations --dry-run`
+- `python3 manage.py migrate --plan`
+- `python3 manage.py migrate`
+- `python3 manage.py createsuperuser`
+- `git status`
+- `git remote -v`
 
 ## Authentication System
 - `pip3 install django-allauth==0.41.0`
@@ -39,3 +42,11 @@
 
 - `python3 manage.py startapp home`
 - `mkdir -p home/templates/home`
+
+## Heroku Set Up & Debug
+
+- `git remote -v`
+- `heroku create appname`
+- `git remote add heroku https://git.heroku.com/boutique-ado5.git`
+- `git push heroku main`
+- `heroku logs --tail`
