@@ -56,16 +56,64 @@ body {
     border: 1px solid black !important;
 }
 
-.bg-black{
+.bg-black {
     background: #000 !important;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 80%;
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (min-width: 320px) {
+    .header-container {
+        padding-top: 220px;
+    }
+
+    body {
+        height: calc(100vh - 220px);
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (min-width: 390px) {
+    .header-container {
+        padding-top: 150px;
+    }
+
+    body {
+        height: calc(100vh - 150px);
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (min-width: 768px) {
+    .header-container {
+        padding-top: 130px;
+    }
+
+    body {
+        height: calc(100vh - 130px);
+    }
+}
+
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (min-width: 991px) {
+    .header-container {
+        padding-top: 120px;
+    }
+
+    body {
+        height: calc(100vh - 120px);
     }
 }
 
@@ -77,6 +125,17 @@ body {
         right: 0;
         left: 0;
         z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
     }
 
     .header-container {
