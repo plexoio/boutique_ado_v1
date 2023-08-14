@@ -50,3 +50,7 @@
 - `git remote add heroku https://git.heroku.com/boutique-ado5.git`
 - `git push heroku main`
 - `heroku logs --tail`
+
+## Databases
+
+- `python3 manage.py loaddata categories`
