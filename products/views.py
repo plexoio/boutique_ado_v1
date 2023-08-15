@@ -9,8 +9,22 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
 
     if request.GET:
+
+        # SORTING
+        if 'sort' in request.GET:
+            sort = request.GET['sort']
+            if 'key' in sort:
+                sort = 'lower_key'
+                products = products.annotate(lower_key=Lower('key'))
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if 'desc' in direction:
+                    sort = f'-{sort}'
+            products = products.order_by(sort)
 
         # CATEGORY
         if 'category' in request.GET:
@@ -29,10 +43,13 @@ def all_products(request):
                 description__icontains=query)
             products = products.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+    
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
     return render(request, 'products/products.html', context)
 
