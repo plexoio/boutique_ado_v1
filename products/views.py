@@ -12,14 +12,20 @@ def all_products(request):
     sort = None
     direction = None
 
+    # FILTER & SORT
     if request.GET:
 
         # SORTING
         if 'sort' in request.GET:
             sort = request.GET['sort']
+
+            if 'category' in sort:
+                sort = 'category__name'
+
             if 'key' in sort:
                 sort = 'lower_key'
                 products = products.annotate(lower_key=Lower('key'))
+                
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if 'desc' in direction:
@@ -44,7 +50,7 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-    
+
     context = {
         'products': products,
         'search_term': query,
