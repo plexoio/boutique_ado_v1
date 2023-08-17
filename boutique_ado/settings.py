@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-plexoio-boutiqueadov1-13o3lyuj9d9.ws-eu103.gitpod.io',
+ALLOWED_HOSTS = ['8000-plexoio-boutiqueadov1-13o3lyuj9d9.ws-eu104.gitpod.io',
                  os.environ.get('HEROKU_HOSTNAME')]
 
 
