@@ -1,4 +1,5 @@
 <script type="text/javascript">
+
     // Enable or Disable buttons
     function handleEnableDisable(itemId) {
         let currentValue = parseInt($(`#id_qty_${itemId}`).val());
@@ -9,7 +10,6 @@
     }
 
     // Set limits on page load
-
     let inputLimits = $('.qty_input');
     for (let i = 0; i < inputLimits.length; i++) {
         let itemId = $(inputLimits[i]).data('item_id');
@@ -17,7 +17,6 @@
     }
 
     // Set limits based on the input's state/change
-
     $('.qty_input').change(function () {
         let itemId = $(this).data('item_id');
         handleEnableDisable(itemId)
