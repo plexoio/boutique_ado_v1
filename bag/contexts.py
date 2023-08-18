@@ -15,6 +15,7 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     for item_id, quantity_or_size in bag.items():
+
         if isinstance(quantity_or_size, int):
             product = get_object_or_404(Product, pk=item_id)
             total += quantity_or_size * product.price
